@@ -66,39 +66,39 @@ const typed = new Typed('.multiple-text', {
     
 // }
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const contactForm = document.getElementById('contactForm');
-//     contactForm.addEventListener('submit', function (event) {
-//       event.preventDefault(); // Prevent the default form submission behavior
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission behavior
   
-//       // Get form data
-//       const formData = new FormData(contactForm);
+      // Get form data
+      const formData = new FormData(contactForm);
   
-//       // Check if the form data is valid (you can add your validation logic here)
+      // Check if the form data is valid (you can add your validation logic here)
   
-//       // Send the form data to a server-side script using the Fetch API
-//       fetch('/send-email.php', {
-//         method: 'POST',
-//         body: formData,
-//       })
-//         .then((response) => {
-//           if (response.ok) {
-//             return response.text();
-//           } else {
-//             throw new Error('Failed to send message');
-//           }
-//         })
-//         .then((data) => {
-//           // Handle the response from the server (e.g., show a success message)
-//           console.log('Message sent:', data);
-//           alert('Message sent successfully!');
-//           contactForm.reset(); // Clear the form
-//         })
-//         .catch((error) => {
-//           // Handle errors (e.g., display an error message)
-//           console.error('Error:', error);
-//           alert('Failed to send message. Please try again later.');
-//         });
-//     });
-//   });
+      // Send the form data to a server-side script using the Fetch API
+      fetch('/send-email.php', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.text();
+          } else {
+            throw new Error('Failed to send message');
+          }
+        })
+        .then((data) => {
+          // Handle the response from the server (e.g., show a success message)
+          console.log('Message sent:', data);
+          alert('Message sent successfully!');
+          contactForm.reset(); // Clear the form
+        })
+        .catch((error) => {
+          // Handle errors (e.g., display an error message)
+          console.error('Error:', error);
+          alert('Failed to send message. Please try again later.');
+        });
+    });
+  });
   
